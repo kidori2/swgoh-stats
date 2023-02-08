@@ -19,7 +19,7 @@
     "node": ">=16"
   },
   "repository": {
-    "url": "https://github.com/swgoh-utils/swgoh-stats"
+    "url": "https://github.com/kidori2/swgoh-stats"
   },
   "license": "MIT",
   "devDependencies": {

@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/kidori2/swgoh-stats/compare/v1.0.4...v1.0.5) (2023-02-09)
+
+
+### Bug Fixes
+
+* updated documentation ([71b4f37](https://github.com/kidori2/swgoh-stats/commit/71b4f3769e983bb95ceeb5cc4ad0dc123e4eab8d))
+
 ## [1.0.4](https://github.com/kidori2/swgoh-stats/compare/v1.0.3...v1.0.4) (2023-02-09)
 
 

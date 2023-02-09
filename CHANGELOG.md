@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/kidori2/swgoh-stats/compare/v1.0.6...v1.0.7) (2023-02-09)
+
+
+### Bug Fixes
+
+* added comlink object ([0db3675](https://github.com/kidori2/swgoh-stats/commit/0db36759948685852f28847c7dc716a648a846f5))
+
 ## [1.0.6](https://github.com/kidori2/swgoh-stats/compare/v1.0.5...v1.0.6) (2023-02-09)
 
 

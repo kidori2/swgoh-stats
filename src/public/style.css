@@ -99,6 +99,14 @@ li {
   margin-bottom: 5px;
 }
 
+li i {
+  color: darkorange;
+}
+
+.example {
+  color: khaki;
+}
+
 footer {
   margin-top: 50px;
   padding-top: 25px;

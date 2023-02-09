@@ -50,6 +50,10 @@ h1 {
   color: #373fff;
 }
 
+h2 {
+  color: indianRed;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -101,6 +105,18 @@ li {
 
 li i {
   color: darkorange;
+}
+
+li b {
+  color: hotpink;
+}
+
+.useVal i {
+  color: lightPink;
+}
+
+.useVal b {
+  color: lightSalmon
 }
 
 .example {

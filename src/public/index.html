@@ -141,12 +141,15 @@
         All objects from the <a href="https://api.swgoh.help/swgoh">api.swgoh.help</a> or <a href="https://github.com/swgoh-utils/swgoh-comlink">swgoh-comlink</a> /player endpoint are accepted in POST data.
         <br>
         The minimum required data is outlined below.  The <i>useValues</i> options may allow you to skip some of these fields, if necessary.
+        <br>Only the player.roster object within the player profile returned by the /player endpoint is required and outlined below, but the full object -- an array of full player profiles -- is also accepted.
         <ul>
           <li>
-          <p>
-            Only the player.roster object within the player profile returned by the /player endpoint is required and outlined below, but the full object -- an array of full player profiles -- is also accepted.
-          </p>
+            <b>api.swgoh.help format<b>
           <pre><code id="playerSample"></code></pre>
+        </li>
+          <li>
+            <b>swgoh-comlink format<b>
+          <pre><code id="playerSampleComlink"></code></pre>
         </li>
         </ul>
       </div>
@@ -344,6 +347,70 @@
                 {
                   unitStat: "<integer>",
                   value: "<number>"
+                },
+                "etc"
+              ]
+            },
+            "etc"
+          ],
+          relic: {
+            currentTier: "<integer>"
+          }
+        },
+        "etc"
+      ],{0:[26,' Array of Unit Objects:'],
+         2:[9,' Base ID'],
+         3:[7,' Star Count (1-7)'],
+         4:[8,' Level (1-90)'],
+         5:[9,' Gear Level (1-12)'],
+         6:[14,' Array of Objects'],
+         8:[2,' Gear ID'],
+         11:[16,' Array of Skill Objects:'],
+         13:[8,' Skill level (1-8)'],
+         16:[18,' Array of Mod Objects:'],
+         18:[7,' Mod Rarity (1-7)'],
+         19:[8,' Mod Set ID (1-8)'],
+         20:[6,' Mod Level (1-15)'],
+         21:[9,' Stat Object:'],
+         22:[3,' Stat ID (1-59)'],
+         23:[8,' Stat Value (scaled as displayed in-game)'],
+         25:[7,' Array of Stat Objects:'],
+         27:[1,' Stat ID (1-59)'],
+         28:[6,' Stat Value (scaled as displayed in-game)']
+        });
+      document.getElementById("playerSampleComlink").innerHTML = jsonPrettyPrint.toHtml([
+        {
+          definitionId: "<string>",
+          currentRarity: "<integer>",
+          currentLevel: "<integer>",
+          currentTier: "<integer>",
+          equipment: [
+            {
+              equipmentId: "<string>"
+            },
+            "etc"
+          ],
+          skill: [
+            {
+              tier: "<integer>"
+            }
+          ],
+          equippedStatMod: [
+            {
+              definitionId: "<string>",
+              level: "<integer>",
+              primaryStat: {
+                stat: { 
+                  unitStatId: "<integer>",
+                  unscaledDecimalValue: "<number>"
+                }
+              },
+              secondaryStat: [
+                {
+                  stat: {
+                    unitStatId: "<integer>",
+                    unscaledDecimalValue: "<number>"
+                  }
                 },
                 "etc"
               ]

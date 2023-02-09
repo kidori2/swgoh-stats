@@ -103,25 +103,13 @@ li {
   margin-bottom: 5px;
 }
 
-li i {
-  color: darkorange;
-}
 
-li b {
-  color: hotpink;
-}
-
-.useVal i {
-  color: lightPink;
-}
-
-.useVal b {
-  color: lightSalmon
-}
-
-.example {
-  color: khaki;
-}
+li i { color: darkorange; }
+li b { color: hotpink; }
+.useVal i { color: lightPink; }
+.useVal b { color: lightSalmon }
+.example { color: khaki; }
+.fakeLink { color: Turquoise; }
 
 footer {
   margin-top: 50px;

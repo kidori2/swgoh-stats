@@ -1,3 +1,11 @@
+## [1.0.11](https://github.com/kidori2/swgoh-stats/compare/v1.0.10...v1.0.11) (2023-02-09)
+
+
+### Bug Fixes
+
+* added text color ([4cb88ad](https://github.com/kidori2/swgoh-stats/commit/4cb88ad1e303d4a277ea1b36e1c14c4a1445b696))
+* updated post links ([5efded6](https://github.com/kidori2/swgoh-stats/commit/5efded6482b2a20b91cff287e5860e553c089aa1))
+
 ## [1.0.10](https://github.com/kidori2/swgoh-stats/compare/v1.0.9...v1.0.10) (2023-02-09)
 
 

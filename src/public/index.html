@@ -22,6 +22,7 @@
     </header>
 
     <main>
+      <noscript><h2>Javascript must be enabled to see object format examples.</h2></noscript>
       <p>
         This API can be accessed through either POST requests or GET requests.  The available endpoints for each can be found under <a href="#requests">API Requests</a> below:
       </p>
@@ -139,9 +140,8 @@
           Accepted Unit Formats:
         </h2>
         All objects from the <a href="https://api.swgoh.help/swgoh">api.swgoh.help</a> or <a href="https://github.com/swgoh-utils/swgoh-comlink">swgoh-comlink</a> /player endpoint are accepted in POST data.
-        <br>
         The minimum required data is outlined below.  The <i>useValues</i> options may allow you to skip some of these fields, if necessary.
-        <br>Only the player.roster object within the player profile returned by the /player endpoint is required and outlined below, but the full object -- an array of full player profiles -- is also accepted.
+        <br>Only the .roster object within the player profile returned by the /player endpoint is required and outlined below, but the full object -- an array of full player profiles -- is also accepted.
         <ul>
           <li>
             <b>api.swgoh.help format<b>
@@ -422,25 +422,24 @@
           }
         },
         "etc"
-      ],{0:[26,' Array of Unit Objects:'],
+      ],{0:[36,' Array of Unit Objects:'],
          2:[9,' Base ID'],
          3:[7,' Star Count (1-7)'],
          4:[8,' Level (1-90)'],
          5:[9,' Gear Level (1-12)'],
-         6:[14,' Array of Objects'],
-         8:[2,' Gear ID'],
-         11:[16,' Array of Skill Objects:'],
-         13:[8,' Skill level (1-8)'],
-         16:[18,' Array of Mod Objects:'],
-         18:[7,' Mod Rarity (1-7)'],
-         19:[8,' Mod Set ID (1-8)'],
-         20:[6,' Mod Level (1-15)'],
-         21:[9,' Stat Object:'],
-         22:[3,' Stat ID (1-59)'],
-         23:[8,' Stat Value (scaled as displayed in-game)'],
-         25:[7,' Array of Stat Objects:'],
-         27:[1,' Stat ID (1-59)'],
-         28:[6,' Stat Value (scaled as displayed in-game)']
+         6:[21,' Array of Objects'],
+         8:[8,' Gear ID'],
+         11:[25,' Array of Skill Objects:'],
+         13:[16,' Skill level (1-8)'],
+         16:[15,' Array of Mod Objects:'],
+         18:[5,' Mod Id ###'],
+         19:[11,' Mod Level (1-15)'],
+         20:[24,' Stat Object:'],
+         22:[5,' Stat ID (1-59)'],
+         23:[4,' Stat Value (unscaled)'],
+         26:[15,' Array of Stat Objects:'],
+         29:[5,' Stat ID (1-59)'],
+         30:[4,' Stat Value (unscaled)']
         });
       document.getElementById("testSample").innerHTML = jsonPrettyPrint.toHtml({
         key: 123,

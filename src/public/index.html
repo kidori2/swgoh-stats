@@ -34,8 +34,8 @@
         <ul>
           <li><b>POST:</b>
             <div>
-              <br>All POST data should have Content-Type of 'application/json', and be formatted the same as the objects returned by <a href="https://api.swgoh.help/swgoh">api.swgoh.help</a> or <a href="https://github.com/swgoh-utils/swgoh-comlink">swgoh-comlink</a>.
-              <br>See <a href="#formats">Accepted Unit Formats</a> for a description of what those objects look like, and which properties must be included here.
+              <br>Used to get stats for units in a player's roster.
+              <br>All POST data should have Content-Type of 'application/json', and be formatted the same as the objects returned by <a href="https://api.swgoh.help/swgoh">api.swgoh.help</a> or <a href="https://github.com/swgoh-utils/swgoh-comlink">swgoh-comlink</a>. See <a href="#formats">Accepted Unit Formats</a> for a description of what those objects look like, and which properties must be included here.
             </div>
             <dl>
               <dt><a href="/api">/api</a></dt>
@@ -48,7 +48,7 @@
           </li>
           <li><b>GET:</b>
             <div>
-              <br><i>Static Data</i> -- defaults to maximum non-modded stats.
+              <br>Used to get stats for units. Defaults to maximum non-modded stats.
             </div>
             <dl>
               <dt><a href="/api">/api</a></dt>
@@ -76,33 +76,33 @@
             <ul>
               <li><i>gameStyle</i>: adjusts the stat objects to return 'final' stats (the total seen in-game) instead of 'base' stats.  Also applies same conversion as <i>percentVals</i>.<br>
                 <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/DARTHSION?flags=gameStyle">/api/characters/DARTHSION?flags=gameStyle</a></li>
-              <li><i>calcGP</i>: Runs GP calculations along with any other calculations, and stores the resulting value in the unit's '.gp' property. Ship GP calculations require the crew to also be provided in the requested roster.<br>
+              <li><i>calcGP</i>: calculates unit Galacitc Power and stores the resulting value in the unit's '.gp' property. Ship GP calculations require the crew to also be provided in the requested roster.<br>
                 <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/DARTHSION?flags=calcGP">/api/characters/DARTHSION?flags=calcGP</a></li>
-              <li><i>onlyGP</i>: Same as calcGP, but skips all other calculations.<br>
+              <li><i>onlyGP</i>: skips all stat calculations and only calculates GP and adds it to the unit's ".gp" property.<br>
                 <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/DARTHSION?flags=onlyGP">/api/characters/DARTHSION?flags=onlyGP</a></li>
-              <li><i>withoutModCalc</i>: skips calculating mod stats on characters to speed up the calculation.  Irrelevent to GET requests.<br>
+              <li><i>withoutModCalc</i>: skips calculating mod stats on characters to speed up the calculation. Irrelevent to GET requests.<br>
                 <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/DARTHSION?flags=withoutModCalc">/api/characters/DARTHSION?flags=withoutModCalc</a></li>
-              <li><i>percentVals</i>: converts Crit Chance and Armor/Resistance from their flat values (default) to the percent values as displayed in-game.<br>
+              <li><i>percentVals</i>: converts Critical Chance and Armor/Resistance from their flat values (default) to the percent values as displayed in-game.<br>
                 <span class="tab" /><i class="example">Example:</i> <a href="/api?flags=percentVals">/api?flags=percentVals</a></li>
               <li><i>useMax</i>: calculates stats based on the maximum values for each unit requested.  Overrides the <i>useValues</i> options.<br>
                 <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/JEDIKNIGHTREVAN?flags=useMax">/api/characters/JEDIKNIGHTREVAN?flags=useMax</a>
-                (NOTE: on Static Data GET requests, <i>useMax</i> is implied if <i>useValues</i> is missing)</li>
+                (NOTE: on GET requests, <i>useMax</i> is implied if <i>useValues</i> is missing)</li>
               <li><i>scaled</i>: returns all stats as their 'scaledValueDecimal' equivalents -- 10,000 times the common value.  Non-modded stats should all be integers at this scale.<br>
                 <span class="tab" /><i class="example">Example:</i> <a href="/api/characters?flags=scaled">/api/characters?flags=scaled</a></li>
               <li><i>unscaled</i>: returns all stats as their 'unscaledDecimalValue' equivalents -- 100,000,000 times the common value.  All stats should be integers at this scale.<br>
                 <span class="tab" /><i class="example">Example:</i> <a href="/api/ships?flags=unscaled">/api/ships?flags=unscaled</a></li>
-              <li><i>statIDs</i>: leaves the stat object unlocalized and indexed by the stat ID.  Ignores any specified <i>language</i> option.<br>
+              <li><i>statIDs</i>: leaves the stat object unlocalized and indexed by the stat ID.  Ignores any specified <b>language</b> option.<br>
                 <span class="tab" /><i class="example">Example:</i> <a href="/api/ships/CAPITALCHIMAERA?flags=statIDs">/api/ships/CAPITALCHIMAERA?flags=statIDs</a></li>
-              <li><i>enums</i>: indexes the stat object by the unlocalized enum string used as a key in the game's localization files.  Ignores any specified <i>language</i> option.<br>
+              <li><i>enums</i>: indexes the stat object by the unlocalized enum string used as a key in the game's localization files.  Ignores any specified <b>language</b> option.<br>
                 <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/HUMANTHUG?flags=enums">/api/characters/HUMANTHUG?flags=enums</a></li>
-              <li><i>noSpace</i>: in conjunction with the <i>language</i> option below, this flag will convert the localization string into standard camelCase with no spaces.<br>
+              <li><i>noSpace</i>: in conjunction with the <b>language</b> option below, this flag will convert the localization string into standard camelCase with no spaces.<br>
                 <span class="tab" /><i class="example">Example:</i> <a href="/api/ships/HOUNDSTOOTH?flags=noSpace&language=eng_us">/api/ships/HOUNDSTOOTH?flags=noSpace&language=eng_us</a></li>
             </ul>
           </li>
           <li><b>language</b> -- a string with the language code for the desired language.
             <div class="tab">
               The stat object will be indexed using the localized stat names for that language.  The supported languages are included in <a href="/dataVersion.json">/dataVersion.json</a>.
-              If no language is sent (and neither the <i>statIDs</i> or <i>enums</i> flag is used), <i>eng_us</i> will be used by default.<br>
+              If no language is sent (and neither the <i>statIDs</i> or <i>enums</i> flag is used), eng_us will be used by default.<br>
             </div>
           </li>
           <li><b>useValues</b> -- a JSON-style object (quotes optional, brackets required) with parameters to use for all units in the request.
@@ -111,7 +111,7 @@
               <pre><code id="useValuesSample"></code></pre>
               Any properties can be skipped, and the default values will be used instead (max values for GET requests, unit values for POST data).<br>
               Some properties have multiple ways to define them, as follows:
-              <ul>
+              <ul class="useVal">
                 <li><i>equipped</i>: (defaults to "all")<br>
                   <span class="tab" /><b>"all"</b> defines all possible gear pieces are equipped.<br>
                   <span class="tab" /><b>"none"</b> defines no gear pieces are equipped.<br>
@@ -138,15 +138,13 @@
         <h2>
           Accepted Unit Formats:
         </h2>
-        All objects from <a href="https://api.swgoh.help/swgoh">api.swgoh.help</a>'s or <a href="https://github.com/swgoh-utils/swgoh-comlink">swgoh-comlink's</a> <b>/player</b> endpoint are accepted in POST data.
+        All objects from the <a href="https://api.swgoh.help/swgoh">api.swgoh.help</a> or <a href="https://github.com/swgoh-utils/swgoh-comlink">swgoh-comlink</a> /player endpoint are accepted in POST data.
         <br>
-        The main types of object returned from that endpoint is referred to here as the <i>Player</i>-style (the <b>/player</b> endpoint)
         The minimum required data is outlined below.  The <i>useValues</i> options may allow you to skip some of these fields, if necessary.
         <ul>
           <li>
-          <b>Player-Style</b>
           <p>
-            Only the <b>.roster</b> object within the player profile returned by <b>/player</b> is required and outlined below, but the full object -- an array of full player profiles -- is also accepted.
+            Only the player.roster object within the player profile returned by the /player endpoint is required and outlined below, but the full object -- an array of full player profiles -- is also accepted.
           </p>
           <pre><code id="playerSample"></code></pre>
         </li>
@@ -162,7 +160,7 @@
         <ul>
           <li><a href="/gameData.json">/gameData.json</a> --
             The base 'gameData' object used by the stat calculator.
-            Built from many collections in the game <b>/data</b> endpoint.
+            Built from many collections in the game /data< endpoint.
           </li>
           <li><a href="/dataVersion.json">/dataVersion.json</a> --
             The current data version info, along with the supported localization languages.

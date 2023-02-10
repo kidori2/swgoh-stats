@@ -108,8 +108,11 @@ li i { color: darkorange; }
 li b { color: hotpink; }
 .useVal i { color: lightPink; }
 .useVal b { color: lightSalmon }
-.example { color: khaki; }
+.example { color: blanchedAlmond; }
 .fakeLink { color: Turquoise; }
+#option a:link { color: blanchedAlmond; }
+#option a:hover { color: khaki; }
+#option a:visited { color: blanchedAlmond; }
 
 footer {
   margin-top: 50px;

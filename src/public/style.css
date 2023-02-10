@@ -110,9 +110,9 @@ li b { color: hotpink; }
 .useVal b { color: lightSalmon }
 .example { color: blanchedAlmond; }
 .fakeLink { color: Turquoise; }
-#option a:link { color: blanchedAlmond; }
-#option a:hover { color: khaki; }
-#option a:visited { color: blanchedAlmond; }
+#options a:link { color: blanchedAlmond; }
+#options a:hover { color: khaki; }
+#options a:visited { color: blanchedAlmond; }
 
 footer {
   margin-top: 50px;

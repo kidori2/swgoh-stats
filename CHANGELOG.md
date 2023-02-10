@@ -1,3 +1,10 @@
+## [1.0.19](https://github.com/kidori2/swgoh-stats/compare/v1.0.18...v1.0.19) (2023-02-10)
+
+
+### Bug Fixes
+
+* corrected noscript ([9f25173](https://github.com/kidori2/swgoh-stats/commit/9f2517385edecbda431f3ba2e5ce2bc7a2becbe4))
+
 ## [1.0.18](https://github.com/kidori2/swgoh-stats/compare/v1.0.17...v1.0.18) (2023-02-10)
 
 

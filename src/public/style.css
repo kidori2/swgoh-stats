@@ -105,9 +105,8 @@ li {
 
 #options li i { color: sandybrown; }
 #options li b { color: lightPink; }
-.useVal i { color: lightPink; }
-.useVal b { color: lightSalmon }
-.example { color: blanchedAlmond; }
+#options.useVal b { color: ivory }
+.example { color: blanchedAlmond !important; }
 #options a:link { color: blanchedAlmond; }
 #options a:visited { color: blanchedAlmond; }
 #options a:hover { color: khaki !important; text-decoration: underline; }

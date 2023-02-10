@@ -1,3 +1,11 @@
+## [1.0.18](https://github.com/kidori2/swgoh-stats/compare/v1.0.17...v1.0.18) (2023-02-10)
+
+
+### Bug Fixes
+
+* added tag for noscript ([d7e6777](https://github.com/kidori2/swgoh-stats/commit/d7e67773dc6a0b3b0df729540a7dbe87dbeb04ab))
+* fixed noscript class ([e267fd2](https://github.com/kidori2/swgoh-stats/commit/e267fd2a998595ab90b83953cecc9eb4e4107061))
+
 ## [1.0.17](https://github.com/kidori2/swgoh-stats/compare/v1.0.16...v1.0.17) (2023-02-10)
 
 

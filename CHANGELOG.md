@@ -1,3 +1,10 @@
+## [1.0.13](https://github.com/kidori2/swgoh-stats/compare/v1.0.12...v1.0.13) (2023-02-10)
+
+
+### Bug Fixes
+
+* fixed id name ([15ee7e0](https://github.com/kidori2/swgoh-stats/commit/15ee7e0538c5c831d9dce05d6848208fc81ce475))
+
 ## [1.0.12](https://github.com/kidori2/swgoh-stats/compare/v1.0.11...v1.0.12) (2023-02-10)
 
 

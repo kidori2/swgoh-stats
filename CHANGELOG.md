@@ -1,3 +1,11 @@
+## [1.0.14](https://github.com/kidori2/swgoh-stats/compare/v1.0.13...v1.0.14) (2023-02-10)
+
+
+### Bug Fixes
+
+* colors ([9771f5d](https://github.com/kidori2/swgoh-stats/commit/9771f5d60895d0c54f7d54bd28b2bd8325d4882f))
+* css order ([7fc5df6](https://github.com/kidori2/swgoh-stats/commit/7fc5df6c7966b3fed27596d784b630de2cd936f0))
+
 ## [1.0.13](https://github.com/kidori2/swgoh-stats/compare/v1.0.12...v1.0.13) (2023-02-10)
 
 

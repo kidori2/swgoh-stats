@@ -111,7 +111,8 @@ li b { color: hotpink; }
 .example { color: blanchedAlmond; }
 .fakeLink { color: Turquoise; }
 #options a:link { color: blanchedAlmond; }
-#options a:hover { color: khaki; }
+#options a:hover { color: khaki !important; text-decoration: underline; }
+#options a:active { color: khaki !important; text-decoration: underline; }
 #options a:visited { color: blanchedAlmond; }
 
 footer {

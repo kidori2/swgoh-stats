@@ -27,31 +27,30 @@ body::before {
 
 a:link {
   text-decoration: none;
-  color: Turquoise;
+  color: DeepSkyBlue;
 }
 
 a:visited {
   text-decoration: none;
-  color: DarkTurquoise;
+  color: DeepSkyBlue;
 }
 
 a:hover {
   text-decoration: underline;
-  color: LimeGreen;
+  color: LightSkyBlue;
 }
 
 a:active {
   text-decoration: underline;
-  color: DarkSlateBlue;
+  color: MediumAquamarine;
 }
 
 h1 {
   font-style: italic;
-  color: #373fff;
 }
 
-h2 {
-  color: indianRed;
+noscript {
+  color: Salmon;
 }
 
 .bold {
@@ -104,16 +103,15 @@ li {
 }
 
 
-li i { color: darkorange; }
-li b { color: hotpink; }
+#options li i { color: sandybrown; }
+#options li b { color: lightPink; }
 .useVal i { color: lightPink; }
 .useVal b { color: lightSalmon }
 .example { color: blanchedAlmond; }
-.fakeLink { color: Turquoise; }
 #options a:link { color: blanchedAlmond; }
 #options a:visited { color: blanchedAlmond; }
 #options a:hover { color: khaki !important; text-decoration: underline; }
-#options a:active { color: khaki !important; text-decoration: underline; }
+#options a:active { color: goldenRod !important; text-decoration: underline; }
 
 footer {
   margin-top: 50px;

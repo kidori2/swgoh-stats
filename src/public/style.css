@@ -8,10 +8,11 @@
 body {
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   margin: 2em;
-  background-image: url('pexels-photo-1169754.jpeg');
+  background-color: white;
+  /*background-image: url('pexels-photo-1169754.jpeg');
   background-size: cover;
   color: white;
-  background-attachment: fixed;
+  background-attachment: fixed;*/
 }
 body::before {
   content: ' ';

@@ -1,0 +1,78 @@
+/* styles */
+/* called by your view template */
+
+*
+ {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+    margin: 2em;
+    background-image: url('pexels-photo-1169754.jpeg');
+    background-color: black;
+    background-size: cover;
+    color: white;
+    background-attachment: fixed;
+  }
+
+  a {
+    text-decoration: none;
+    color: lightskyblue;
+  }
+  a:hover { text-decoration: underline; color:deepskyblue; }
+  a:active { color: deepskyblue; }
+  a:visited { color: aquamarine; }
+
+  h1 {
+    font-style: italic;
+  }
+  
+  .nojs {
+    color: Salmon;
+  }
+  
+  .bold {
+    font-weight: bold;
+  }
+    
+  li {
+    margin-bottom: 5px;
+  }
+  
+  code {
+    background-color: rgba(200,200,200,0.7) !important;
+    padding: 5px;
+    display: inline-block;
+    color: black;
+  }
+
+  #options {
+    line-height: 1.2em;
+  }
+
+  .command {
+    color: sandybrown !important;
+    font-family: monospace !important;
+    font-size: 1.15em;
+    /*font-weight: bold;*/
+  }
+
+  .example a {
+    color: blanchedalmond;
+  }
+  .example a:hover {
+    color: khaki;
+  }
+  .example a:active {
+    color: khaki;
+  }
+  
+  .json-key     { color: darkgreen !important; }
+  /*.json-value   { color: red !important; }
+  .json-string  { color: darkred !important; }*/
+  .json-token   { color: blue !important; }
+  .json-comment { color: rgb(70,70,70) !important; }
+  
+  .tab { margin-left: 2em; }
+  

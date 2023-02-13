@@ -1,3 +1,11 @@
+## [1.0.22](https://github.com/kidori2/swgoh-stats/compare/v1.0.21...v1.0.22) (2023-02-13)
+
+
+### Bug Fixes
+
+* added adjusted current css ([871b23f](https://github.com/kidori2/swgoh-stats/commit/871b23fc0d80979c6df5903774dabd1d487136cd))
+* changed to plain css ([fa1aa6c](https://github.com/kidori2/swgoh-stats/commit/fa1aa6c6c9af692fc8f6add9db0f29a86b182af7))
+
 ## [1.0.21](https://github.com/kidori2/swgoh-stats/compare/v1.0.20...v1.0.21) (2023-02-13)
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SWGOH Stat Calculator</title>
+    <title>SWGOH Stats</title>
     <meta name="description" content="Stat Calculator made by Crinolo for EA's Star Wars Galaxy of Heroes">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,125 +12,125 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 900px)" href="/style2.css">
   </head>
   <body>
     <header>
       <h1>
-        SWGoH Stat Calculator
+        SWGoH Stats
       </h1>
     </header>
 
     <main>
-      <noscript><h2 class="nojs">Javascript must be enabled to see object format examples.</h2></noscript>
       <p>
-        This API can be accessed through either POST requests or GET requests.  The available endpoints for each can be found under <a href="#requests">API Requests</a> below:
+        SWGoH Stats is a microservice of <a href="https://github.com/Crinolo/swgoh-stat-calc">Crinolo's Stat Calculator</a>.
       </p>
-
       <div id="requests">
         <h2>
           API Requests:
-        </h2>
-        All paths below extend the path for this page: <a class="refLink fullLink" data-path="/"></a>
-        <ul>
-          <li><b>POST:</b>
-            <div>
-              <br>Used to get stats for units in a player's roster.
-              <br>All POST data should have Content-Type of 'application/json', and be formatted the same as the objects returned by <a href="https://api.swgoh.help/swgoh">api.swgoh.help</a> or <a href="https://github.com/swgoh-utils/swgoh-comlink">swgoh-comlink</a>. See <a href="#formats">Accepted Unit Formats</a> for a description of what those objects look like, and which properties must be included here.
-            </div>
-            <dl>
-              <dt><span class="fakeLink">/api</span></dt>
-              <dd>Returns stats for each unit (characters and ships) sent in request body</dd>
-              <dt><span class="fakeLink">/api/characters</span></dt>
-              <dd>Returns stats for each character sent in request body</dd>
-              <dt><span class="fakeLink">/api/ships</span></dt>
-              <dd>Returns stats for each ship sent in request body</dd>
-            </dl>
-          </li>
-          <li><b>GET:</b>
-            <div>
-              <br>Used to get stats for units. Defaults to maximum non-modded stats.
-            </div>
-            <dl>
-              <dt><a href="/api">/api</a></dt>
-              <dd>Returns stats for each known unit (characters and ships)</dd>
-              <dt><a href="/api/characters">/api/characters</a></dt>
-              <dd>Returns stats for each known character</dd>
-              <dt><a href="/api/ships">/api/ships</a></dt>
-              <dd>Returns stats for each known ship</dd>
-              <dt><a href="/api/characters/AHSOKATANO">/api/characters/{baseID}</a></dt>
-              <dd>Returns stats for character with base ID of {baseID}</dd>
-              <dt><a href="/api/ships/JEDISTARFIGHTERAHSOKATANO">/api/ships/{baseID}</a></dt>
-              <dd>Returns stats for ship with base ID of {baseID}</dd>
-            </dl>
-          </li>
-        </ul>
+        </h2>        
+        This is API can be accessed through either POST requests or GET requests.
+        <br>All paths below extend the path for this page: <a class="refLink fullLink" data-path="/"></a>
+        <h4>POST:</h4>
+        <div>
+            Used to get stats for units in a player's roster.
+            <br><br>All POST data should have Content-Type of 'application/json', and be formatted the same as the objects returned by <a href="https://api.swgoh.help/swgoh">api.swgoh.help</a> or <a href="https://github.com/swgoh-utils/swgoh-comlink">swgoh-comlink</a>.
+            <br>See <a href="#formats">Accepted Unit Formats</a> for a description of what those objects look like, and which properties must be included here.
+        </div>
+        <dl class="tab">
+            <dt class="bold">/api</dt>
+            <dd>Returns stats for each unit (characters and ships) sent in request body</dd>
+            <dt class="bold">/api/characters</dt>
+            <dd>Returns stats for each character sent in request body</dd>
+            <dt class="bold">/api/ships</dt>
+            <dd>Returns stats for each ship sent in request body</dd>
+        </dl>
+        <h4>GET:</h4>
+        <div>
+            Used to get stats for units. Defaults to maximum non-modded stats.
+        </div>
+        <dl class="tab">
+            <dt class="bold"><a href="/api">/api</a></dt>
+            <dd>Returns stats for each known unit (characters and ships)</dd>
+            <dt class="bold"><a href="/api/characters">/api/characters</a></dt>
+            <dd>Returns stats for each known character</dd>
+            <dt class="bold"><a href="/api/ships">/api/ships</a></dt>
+            <dd>Returns stats for each known ship</dd>
+            <dt class="bold"><a href="/api/characters/AHSOKATANO">/api/characters/{baseID}</a></dt>
+            <dd>Returns stats for character with base ID of {baseID}</dd>
+            <dt class="bold"><a href="/api/ships/JEDISTARFIGHTERAHSOKATANO">/api/ships/{baseID}</a></dt>
+            <dd>Returns stats for ship with base ID of {baseID}</dd>
+        </dl>
       </div>
+      <br />
       <div id="options">
         <h2>
           Query String Options:
         </h2>
         The following options can be added to the query string of the request for any endpoints.<br>
-        <i class="example">Example:</i> <a href="/api/characters/MISSIONVAO?flags=enums,gameStyle,scaled&useValues={char:{rarity:6}}">/api/characters/MISSIONVAO?flags=enums,gameStyle,scaled&useValues={char:{rarity:6}}</a>
+        <i class="example">Example: <a href="/api/characters/MISSIONVAO?flags=enums,gameStyle,scaled&useValues={char:{rarity:6}}">/api/characters/MISSIONVAO?flags=enums,gameStyle,scaled&useValues={char:{rarity:6}}</a></i>
         <ul>
-          <li><b>flags</b> -- a comma-separated list of the following options:
+          <li><b>flags</b>
+            <br>A comma-separated list of the following options:
             <ul>
-              <li><i>gameStyle</i>: adjusts the stat objects to return 'final' stats (the total seen in-game) instead of 'base' stats.  Also applies same conversion as <i>percentVals</i>.<br>
-                <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/DARTHSION?flags=gameStyle">/api/characters/DARTHSION?flags=gameStyle</a></li>
-              <li><i>calcGP</i>: calculates unit Galacitc Power and stores the resulting value in the unit's '.gp' property. Ship GP calculations require the crew to also be provided in the requested roster.<br>
-                <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/DARTHSION?flags=calcGP">/api/characters/DARTHSION?flags=calcGP</a></li>
-              <li><i>onlyGP</i>: skips all stat calculations and only calculates GP and adds it to the unit's ".gp" property.<br>
-                <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/DARTHSION?flags=onlyGP">/api/characters/DARTHSION?flags=onlyGP</a></li>
-              <li><i>withoutModCalc</i>: skips calculating mod stats on characters to speed up the calculation. Irrelevent to GET requests.<br>
-                <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/DARTHSION?flags=withoutModCalc">/api/characters/DARTHSION?flags=withoutModCalc</a></li>
-              <li><i>percentVals</i>: converts Critical Chance and Armor/Resistance from their flat values (default) to the percent values as displayed in-game.<br>
-                <span class="tab" /><i class="example">Example:</i> <a href="/api?flags=percentVals">/api?flags=percentVals</a></li>
-              <li><i>useMax</i>: calculates stats based on the maximum values for each unit requested.  Overrides the <i>useValues</i> options.<br>
-                <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/JEDIKNIGHTREVAN?flags=useMax">/api/characters/JEDIKNIGHTREVAN?flags=useMax</a>
-                (NOTE: on GET requests, <i>useMax</i> is implied if <i>useValues</i> is missing)</li>
-              <li><i>scaled</i>: returns all stats as their 'scaledValueDecimal' equivalents -- 10,000 times the common value.  Non-modded stats should all be integers at this scale.<br>
-                <span class="tab" /><i class="example">Example:</i> <a href="/api/characters?flags=scaled">/api/characters?flags=scaled</a></li>
-              <li><i>unscaled</i>: returns all stats as their 'unscaledDecimalValue' equivalents -- 100,000,000 times the common value.  All stats should be integers at this scale.<br>
-                <span class="tab" /><i class="example">Example:</i> <a href="/api/ships?flags=unscaled">/api/ships?flags=unscaled</a></li>
-              <li><i>statIDs</i>: leaves the stat object unlocalized and indexed by the stat ID.  Ignores any specified <b>language</b> option.<br>
-                <span class="tab" /><i class="example">Example:</i> <a href="/api/ships/CAPITALCHIMAERA?flags=statIDs">/api/ships/CAPITALCHIMAERA?flags=statIDs</a></li>
-              <li><i>enums</i>: indexes the stat object by the unlocalized enum string used as a key in the game's localization files.  Ignores any specified <b>language</b> option.<br>
-                <span class="tab" /><i class="example">Example:</i> <a href="/api/characters/HUMANTHUG?flags=enums">/api/characters/HUMANTHUG?flags=enums</a></li>
-              <li><i>noSpace</i>: in conjunction with the <b>language</b> option below, this flag will convert the localization string into standard camelCase with no spaces.<br>
-                <span class="tab" /><i class="example">Example:</i> <a href="/api/ships/HOUNDSTOOTH?flags=noSpace&language=eng_us">/api/ships/HOUNDSTOOTH?flags=noSpace&language=eng_us</a></li>
+              <li><span class="command">gameStyle</span>: adjusts the stat objects to return 'final' stats (the total seen in-game) instead of 'base' stats.  Also applies same conversion as <span class="command">percentVals</span>.<br>
+                <span class="tab" ><i class="example">Example: <a href="/api/characters/DARTHSION?flags=gameStyle">/api/characters/DARTHSION?flags=gameStyle</a></i></li>
+              <li><span class="command">calcGP</span>: calculates unit Galacitc Power and stores the resulting value in the unit's '.gp' property. Ship GP calculations require the crew to also be provided in the requested roster.<br>
+                <span class="tab" ><i class="example">Example: <a href="/api/characters/DARTHSION?flags=calcGP">/api/characters/DARTHSION?flags=calcGP</a></i></li>
+              <li><span class="command">onlyGP</span>: skips all stat calculations and only calculates GP and adds it to the unit's ".gp" property.<br>
+                <span class="tab" ><i class="example">Example: <a href="/api/characters/DARTHSION?flags=onlyGP">/api/characters/DARTHSION?flags=onlyGP</a></i></li>
+              <li><span class="command">withoutModCalc</span>: skips calculating mod stats on characters to speed up the calculation. Irrelevent to GET requests.<br>
+                <span class="tab" ><i class="example">Example: <a href="/api/characters/DARTHSION?flags=withoutModCalc">/api/characters/DARTHSION?flags=withoutModCalc</a></i></li>
+              <li><span class="command">percentVals</span>: converts Critical Chance and Armor/Resistance from their flat values (default) to the percent values as displayed in-game.<br>
+                <span class="tab" ><i class="example">Example: <a href="/api?flags=percentVals">/api?flags=percentVals</a></i></li>
+              <li><span class="command">useMax</span>: calculates stats based on the maximum values for each unit requested.  Overrides the <span class="command">useValues</span> options. On GET requests, <span class="command">useMax</span> is implied if <span class="command">useValues</span> is missing.
+                <br><span class="tab" ><i class="example">Example: <a href="/api/characters/JEDIKNIGHTREVAN?flags=useMax">/api/characters/JEDIKNIGHTREVAN?flags=useMax</a></i></li>
+              <li><span class="command">scaled</span>: returns all stats as their 'scaledValueDecimal' equivalents -- 10,000 times the common value.  Non-modded stats should all be integers at this scale.<br>
+                <span class="tab" ><i class="example">Example: <a href="/api/characters?flags=scaled">/api/characters?flags=scaled</a></i></li>
+              <li><span class="command">unscaled</span>: returns all stats as their 'unscaledDecimalValue' equivalents -- 100,000,000 times the common value.  All stats should be integers at this scale.<br>
+                <span class="tab" ><i class="example">Example: <a href="/api/ships?flags=unscaled">/api/ships?flags=unscaled</a></i></li>
+              <li><span class="command">statIDs</span>: leaves the stat object unlocalized and indexed by the stat ID.  Ignores any specified <b>language</b> option.<br>
+                <span class="tab" ><i class="example">Example: <a href="/api/ships/CAPITALCHIMAERA?flags=statIDs">/api/ships/CAPITALCHIMAERA?flags=statIDs</a></i></li>
+              <li><span class="command">enums</span>: indexes the stat object by the unlocalized enum string used as a key in the game's localization files.  Ignores any specified <b>language</b> option.<br>
+                <span class="tab" ><i class="example">Example: <a href="/api/characters/HUMANTHUG?flags=enums">/api/characters/HUMANTHUG?flags=enums</a></i></li>
+              <li><span class="command">noSpace</span>: in conjunction with the <b>language</b> option below, this flag will convert the localization string into standard camelCase with no spaces.<br>
+                <span class="tab" ><i class="example">Example: <a href="/api/ships/HOUNDSTOOTH?flags=noSpace&language=eng_us">/api/ships/HOUNDSTOOTH?flags=noSpace&language=eng_us</a></i></li>
             </ul>
           </li>
-          <li><b>language</b> -- a string with the language code for the desired language.
+          <li><b>language</b>
+            <br> A string with the language code for the desired language.
             <div class="tab">
               The stat object will be indexed using the localized stat names for that language.  The supported languages are included in <a href="/dataVersion.json">/dataVersion.json</a>.
-              If no language is sent (and neither the <i>statIDs</i> or <i>enums</i> flag is used), eng_us will be used by default.<br>
+              If no language is sent (and neither the <span class="command">statIDs</span> or <span class="command">enums</span> flag is used), eng_us will be used by default.<br>
             </div>
           </li>
-          <li><b>useValues</b> -- a JSON-style object (quotes optional, brackets required) with parameters to use for all units in the request.
+          <li><b>useValues</b>
+            <br>A JSON-style object (quotes optional, brackets required) with parameters to use for all units in the request.
             <div class="tab">
               The object is of the following structure:
               <pre><code id="useValuesSample"></code></pre>
               Any properties can be skipped, and the default values will be used instead (max values for GET requests, unit values for POST data).<br>
               Some properties have multiple ways to define them, as follows:
               <ul class="useVal">
-                <li><i>equipped</i>: (defaults to "all")<br>
-                  <span class="tab" /><b>"all"</b> defines all possible gear pieces are equipped.<br>
-                  <span class="tab" /><b>"none"</b> defines no gear pieces are equipped.<br>
-                  <span class="tab" />An <b>Array</b> can define which gear slots have gear equipped, i.e. [1,2,6] says the top two and the bottom right slots are filled.<br>
-                  <span class="tab" />An <b>integer</b> 1-6 can define how many pieces are equipped, without specific slots (crew definition only).
+                <li><b>equipped</b>: (defaults to "all")<br>
+                  <span class="tab"><i>"all"</i> defines all possible gear pieces are equipped.<br>
+                  <span class="tab"><i>"none"</i> defines no gear pieces are equipped.<br>
+                  <span class="tab">An <i>Array</i> can define which gear slots have gear equipped, i.e. [1,2,6] says the top two and the bottom right slots are filled.<br>
+                  <span class="tab">An <i>integer</i> 1-6 can define how many pieces are equipped, without specific slots (crew definition only).
                 </li>
-                <li><i>skills</i>: (defaults to "max")<br>
-                  <span class="tab" /><b>"max"</b> defines all skills are maxed.<br>
-                  <span class="tab" /><b>"maxNoZeta"</b> defines all non-zeta skills are maxed, while Zeta abilities are still rank 7.<br>
-                  <span class="tab" />An <b>integer</b> 1-8 defines all skills to be at that rank if possible, or as close to it if they max at a lower rank (such as contracts).
+                <li><b>skills</b>: (defaults to "max")<br>
+                  <span class="tab"><i>"max"</i> defines all skills are maxed.<br>
+                  <span class="tab"><i>"maxNoZeta"</i> defines all non-zeta skills are maxed, while Zeta abilities are still rank 7.<br>
+                  <span class="tab">An <i>integer</i> 1-8 defines all skills to be at that rank if possible, or as close to it if they max at a lower rank (such as contracts).
                 </li>
-                <li><i>relic</i>: (defaults to 9)<br>
-                  <span class="tab" /><b>1</b> - Relic Locked (gear &lt;13).<br>
-                  <span class="tab" /><b>2</b> - Relic Unlocked (but still level 0).<br>
-                  <span class="tab" /><b>3-9</b> - Relic Levels 1-7, respectively.  'Tier' value here is Relic Level + 2, as defined in game data.
+                <li><b>relic</b>: (defaults to 9)<br>
+                  <span class="tab"><i>1</i> - Relic Locked (gear &lt;13).<br>
+                  <span class="tab"><i>2</i> - Relic Unlocked (but still level 0).<br>
+                  <span class="tab"><i>3-11</i> - Relic Levels 1-9, respectively.  'Tier' value here is Relic Level + 2, as defined in game data.
                 </li>
               </ul>
-              <i class="example">Example:</i> <a href="/api/ships/HOUNDSTOOTH?useValues={ship:{rarity:6},crew:{gear:11,equipped:none,skills:maxNoZeta}}">/api/ships/HOUNDSTOOTH?useValues={ship:{rarity:6},crew:{gear:11,equipped:none,skills:maxNoZeta}}</a>
+              <i class="example">Example: <a href="/api/ships/HOUNDSTOOTH?useValues={ship:{rarity:6},crew:{gear:11,equipped:none,skills:maxNoZeta}}">/api/ships/HOUNDSTOOTH?useValues={ship:{rarity:6},crew:{gear:11,equipped:none,skills:maxNoZeta}}</a></i>
             </div>
           </li>
         </ul>
@@ -139,16 +139,16 @@
         <h2>
           Accepted Unit Formats:
         </h2>
-        All objects from the <a href="https://api.swgoh.help/swgoh">api.swgoh.help</a> or <a href="https://github.com/swgoh-utils/swgoh-comlink">swgoh-comlink</a> /player endpoint are accepted in POST data.
-        The minimum required data is outlined below.  The <i>useValues</i> options may allow you to skip some of these fields, if necessary.
-        <br>Only the .roster object within the player profile returned by the /player endpoint is required and outlined below, but the full object -- an array of full player profiles -- is also accepted.
+        All objects from the <a href="https://api.swgoh.help/swgoh">api.swgoh.help</a> or <a href="https://github.com/swgoh-utils/swgoh-comlink">swgoh-comlink</a> <b>/player</b> endpoint are accepted in POST data.
+        The minimum required data is outlined below.  The <span class="command">useValues</span> options may allow you to skip some of these fields, if necessary.
+        <br>Only the <i class="bold">.roster</i> object within the player profile returned by the <b>/player</b> endpoint is required and outlined below, but the full object -- an array of full player profiles -- is also accepted.
         <ul>
           <li>
-            <b>api.swgoh.help format<b>
+            <b>api.swgoh.help format</b>
           <pre><code id="playerSample"></code></pre>
         </li>
           <li>
-            <b>swgoh-comlink format<b>
+            <b>swgoh-comlink format</b>
           <pre><code id="playerSampleComlink"></code></pre>
         </li>
         </ul>
@@ -163,7 +163,7 @@
         <ul>
           <li><a href="/gameData.json">/gameData.json</a> --
             The base 'gameData' object used by the stat calculator.
-            Built from many collections in the game /data< endpoint.
+            Built from many collections in the game <b>/data</b> endpoint.
           </li>
           <li><a href="/dataVersion.json">/dataVersion.json</a> --
             The current data version info, along with the supported localization languages.
@@ -174,19 +174,12 @@
           <li><a href="/statEnum.json">/statEnum.json</a> --
             The Stat Enum object from in-game data.  Text is formatted to match that used in the raw localization files that can be pulled off your device, mapping stat enums to the localization keys.
           </li>
-        <!--
-          <li><a class="refLink" data-path="/"></a> --
-
-          </li>
-        -->
         </ul>
       </div>
-      <!--<pre><code id="testSample"></code></pre> -->
     </main>
 
     <script>
       // On load, set reference links to values defined by the 'data-path' attribute
-
       // extract site root path, removing an ending '/' or any existing query string.
       let [, site] = /(.+?)\/?(?:\?.*)?$/.exec(window.location.href);
 
@@ -358,25 +351,25 @@
           }
         },
         "etc"
-      ],{0:[26,' Array of Unit Objects:'],
-         2:[9,' Base ID'],
-         3:[7,' Star Count (1-7)'],
-         4:[8,' Level (1-90)'],
-         5:[9,' Gear Level (1-12)'],
-         6:[14,' Array of Objects'],
+      ],{0:[11,' Array of Unit Objects:'],
+         2:[2,' Base ID'],
+         3:[2,' Star Count (1-7)'],
+         4:[2,' Level (1-90)'],
+         5:[2,' Gear Level (1-12)'],
+         6:[2,' Array of Objects'],
          8:[2,' Gear ID'],
-         11:[16,' Array of Skill Objects:'],
-         13:[8,' Skill level (1-8)'],
-         16:[18,' Array of Mod Objects:'],
-         18:[7,' Mod Rarity (1-7)'],
-         19:[8,' Mod Set ID (1-8)'],
-         20:[6,' Mod Level (1-15)'],
-         21:[4,' Stat Object:'],
-         22:[3,' Stat ID (1-59)'],
-         23:[8,' Stat Value (scaled as displayed in-game)'],
-         25:[7,' Array of Stat Objects:'],
-         27:[1,' Stat ID (1-59)'],
-         28:[6,' Stat Value (scaled as displayed in-game)']
+         11:[2,' Array of Skill Objects:'],
+         13:[2,' Skill level (1-8)'],
+         16:[2,' Array of Mod Objects:'],
+         18:[2,' Mod Rarity (1-7)'],
+         19:[2,' Mod Set ID (1-8)'],
+         20:[2,' Mod Level (1-15)'],
+         21:[2,' Stat Object:'],
+         22:[2,' Stat ID (1-59)'],
+         23:[2,' Stat Value (scaled as displayed in-game)'],
+         25:[2,' Array of Stat Objects:'],
+         27:[2,' Stat ID (1-59)'],
+         28:[2,' Stat Value (scaled as displayed in-game)']
         });
       document.getElementById("playerSampleComlink").innerHTML = jsonPrettyPrint.toHtml([
         {
@@ -422,24 +415,24 @@
           }
         },
         "etc"
-      ],{0:[36,' Array of Unit Objects:'],
-         2:[9,' Base ID'],
-         3:[7,' Star Count (1-7)'],
-         4:[8,' Level (1-90)'],
-         5:[9,' Gear Level (1-12)'],
-         6:[21,' Array of Objects'],
-         8:[8,' Gear ID'],
-         11:[25,' Array of Skill Objects:'],
-         13:[16,' Skill level (1-8)'],
-         16:[15,' Array of Mod Objects:'],
-         18:[5,' Mod Id ###'],
-         19:[11,' Mod Level (1-15)'],
-         20:[24,' Stat Object:'],
-         22:[5,' Stat ID (1-59)'],
-         23:[4,' Stat Value (unscaled)'],
-         26:[15,' Array of Stat Objects:'],
-         29:[5,' Stat ID (1-59)'],
-         30:[4,' Stat Value (unscaled)']
+      ],{0:[14,' Array of Unit Objects:'],
+         2:[2,' Base ID'],
+         3:[2,' Star Count (1-7)'],
+         4:[2,' Level (1-90)'],
+         5:[2,' Gear Level (1-12)'],
+         6:[2,' Array of Objects'],
+         8:[2,' Gear ID'],
+         11:[2,' Array of Skill Objects:'],
+         13:[2,' Skill level (1-8)'],
+         16:[2,' Array of Mod Objects:'],
+         18:[2,' Mod Id ###'],
+         19:[2,' Mod Level (1-15)'],
+         20:[2,' Stat Object:'],
+         22:[2,' Stat ID (1-59)'],
+         23:[2,' Stat Value (unscaled)'],
+         26:[2,' Array of Stat Objects:'],
+         29:[2,' Stat ID (1-59)'],
+         30:[2,' Stat Value (unscaled)']
         });
       document.getElementById("testSample").innerHTML = jsonPrettyPrint.toHtml({
         key: 123,

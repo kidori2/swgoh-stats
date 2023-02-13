@@ -22,7 +22,7 @@
   }
   a:hover { text-decoration: underline; color:deepskyblue; }
   a:active { color: deepskyblue; }
-  a:visited { color: aquamarine; }
+  a:visited { color: lightskyblue; }
 
   h1 {
     font-style: italic;

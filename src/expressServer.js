@@ -124,7 +124,8 @@ router.use(['/api','/api/characters','/api/characters/:baseID','/api/ships','/ap
           skills: obj.skills,
           modRarity: obj.modRarity,
           modLevel: obj.modLevel,
-          modTier: obj.modTier
+          modTier: obj.modTier,
+          purchasedAbilityId: obj.purchasedAbilityId
         },
         ship: {
           rarity: obj.rarity,
